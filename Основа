@@ -5,17 +5,17 @@
  
 using namespace std;
  
-struct Medicine
+struct ГUniversity
 {
     int no; //номер
     string name; //название
-    string gldoc; //Глав.врач
-    string coldoc; //кол-во врачей
+    string gldoc; //Ректор
+    string coldoc; //кол-во преподавателей
     int decr; //кол-во в отпуске
     int money; //отпускные
 };
  
-void edit(int n, struct Medicine* p)
+void edit(int n, struct University* p)
 {
  
     int i;
@@ -38,7 +38,7 @@ void edit(int n, struct Medicine* p)
 void input(int n, struct Medicine* p)
 {
     ifstream fin;
-    fin.open("Медицина.txt");
+    fin.open("Eybdthcbntn.txt");
     for (int i = 0; i < n; i++) {
         fin >> p[i].no >> p[i].name >> p[i].gldoc >> p[i].coldoc >> p[i].decr >> p[i].money;
     }
@@ -52,7 +52,7 @@ void output(int n, struct Medicine* p)
         cout << p[i].no << p[i].name << p[i].gldoc << p[i].coldoc << p[i].decr << p[i].money << endl;
     }
 }
-void output_file(int n, struct Medicine* p)
+void output_file(int n, struct University* p)
 {
     ofstream fout;
     fout.open("f2.txt");
@@ -62,7 +62,7 @@ void output_file(int n, struct Medicine* p)
     fout.close();
 }
  
-int calc(int n, struct Medicine* p)
+int calc(int n, struct University* p)
 {
     int k = 0;
     for (int i = 0; i < n; i++)
@@ -80,16 +80,16 @@ int main()
     cout << "n= ";
     cin >> n;
  
-    Medicine* medicine = new Medicine[n];
-    input(n, medicine);
-     edit(n, medicine);
-    output(n, medicine);
+    University* university = new University[n];
+    input(n, university);
+     edit(n, university);
+    output(n, university);
  
-    output_file(n, medicine);
-    calc(n, medicine);
-    delete[] medicine;
+    output_file(n, university);
+    calc(n, university);
+    delete[] university;
  
-    medicine = NULL;
+    university = NULL;
  
     return 0;
 }
